@@ -1,0 +1,21 @@
+from requests import get
+
+import codecs
+import webbrowser
+import os
+
+g = input('what is your name?: ')
+
+url = ("https://foass.1001010.com/thanks/" + g)
+
+
+a = get(url)
+open('ad.html', 'w').close()
+f = open("ad.html", "a")
+f.write(a.text)
+f.close()
+
+
+filename = 'file:///'+os.getcwd()+'/' + 'ad.html'
+webbrowser.open_new_tab(filename)
+
